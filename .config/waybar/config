@@ -1,0 +1,183 @@
+{
+  "layer": "top",
+  "position": "top",
+
+  "width": 1920,
+  "height": 36,
+
+  "margin-top": 15,
+  "margin-left": 0,
+  "margin-right": 0,
+
+  "modules-left": [
+    "custom/launcher",
+    "hyprland/workspaces",
+//  "custom/music",
+//  "custom/cava"
+    "cpu",
+    "memory"
+  ],
+
+  "modules-center": [
+    "clock#day",
+    "clock#time",
+    "clock#date"
+
+  ],
+
+  "modules-right": [
+    "network",
+    "backlight",
+    "pulseaudio",
+    "battery",
+    "custom/power"
+  ],
+
+  // ─────────────────────────
+  // IZQUIERDA
+  // ─────────────────────────
+
+  "custom/launcher": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "rofi -show drun"
+  },
+
+  "hyprland/workspaces": {
+    "disable-scroll": true,
+    "on-click": "activate",
+    "all-outputs": true,
+    "active-only": false,
+
+    "persistent-workspaces": {
+      "1": [],
+      "2": [],
+      "3": [],
+      "4": [],
+      "5": [],
+      "6": []
+    },
+
+    "format": "{icon}",
+    "format-icons": {
+      "active": "<span font='12'>󰮯</span>",
+      "empty": "<span font='8'></span>",
+      "persistent": "󰊠"
+    }
+  },
+
+  "cpu": {
+  "interval": 2,
+  "format": "   {usage}%",
+  "tooltip": false
+},
+
+"memory": {
+  "interval": 2,
+  "format": "   {used:0.1f}  GiB",
+  "tooltip": false
+},
+
+
+/*  "custom/music": {
+    "exec": "playerctl metadata --format ' {{ title }}'",
+    "interval": 2,
+    "format": " {}",
+    "tooltip": false,
+    "on-click": "playerctl play-pause"
+  }, 
+
+  "custom/cava": {
+    "exec": "~/.config/waybar/scripts/cava.sh",
+    "exec-once": true,
+    "interval": 0,
+    "tooltip": false
+  },
+*/
+
+  // ─────────────────────────
+  // CENTRO
+  // ─────────────────────────
+
+"clock#day": {
+  "format": "{:%A}",
+  "tooltip": false
+},
+
+"clock#time": {
+  "format": "{:%I:%M %p}",
+  "tooltip": false
+},
+
+"clock#date": {
+  "format": "{:%d/%m/%Y}",
+  "tooltip": false
+},
+
+  // ─────────────────────────
+  // DERECHA
+  // ─────────────────────────
+
+"network": {
+  "interface": "wlan0",
+  "tooltip": false,
+  "format": "{icon}  {essid}",
+  "format-icons": {
+    "wifi": [
+      "󰤯",  
+      "󰤟",  
+      "󰤢",  
+      "󰤥",  
+      "󰤨"
+    ],
+    "disconnected": "󰤮",
+    "disabled": "󰤭"
+  }
+},
+
+"backlight": {
+  "tooltip": false,
+  "scroll-step": 5,
+  "format": "{icon}  {percent}%",
+  "format-icons": [
+    "󰃞 ",
+    "󰃝 ",
+    "󰃟 ",
+    "󰃠 ",
+  ]
+},
+
+"pulseaudio": {
+  "tooltip": false,
+  "scroll-step": 5,
+  "format": "{icon}  {volume}%",
+  "format-muted": "󰝟",
+  "format-icons": {
+    "default": [
+      "",
+      " ",
+      " "
+    ]
+  }
+},
+
+"battery": {
+  "tooltip": false,
+  "format": "{icon}  {capacity}%",
+  "format-charging": "  {capacity}%",
+  "format-icons": [
+    " ",
+    " ",
+    " ",
+    " ",
+    " ",
+  ]
+},
+
+  "custom/power": {
+    "format": "",
+    "tooltip": false,
+    "on-click": "~/.config/rofi/scripts/powermenu/powermenu"
+  }
+}
+

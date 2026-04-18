@@ -1,0 +1,166 @@
+* {
+  font-family: "Noto Sans KR", "Noto Sans", sans-serif;
+  font-size: 14px;
+  min-height: 0;
+}
+
+/* ─────────────────────────
+   BARRA GENERAL
+   ───────────────────────── */
+
+window#waybar {
+  background: transparent;
+}
+
+/* Contenedores */
+.modules-left,
+.modules-center,
+.modules-right {
+  margin: 0 6px;
+}
+
+/* ─────────────────────────
+   ESTILO BASE DE MÓDULOS
+   ───────────────────────── */
+
+#custom-launcher,
+#workspaces,
+#cpu,
+#memory,
+#custom-music,
+#custom-cava,
+#clock,
+#network,
+#backlight,
+#pulseaudio,
+#battery,
+#custom-power {
+  background: rgba(30, 32, 48, 0.85);
+  border: 2px solid #C3C6FB;
+  border-radius: 10px;
+  padding: 6px 12px;
+  margin: 0 4px;
+  color: #C3C6FB;
+  font-weight: 600;
+}
+
+/* ─────────────────────────
+   IZQUIERDA – WORKSPACES
+   ───────────────────────── */
+
+#workspaces {
+  padding: 4px 10px;
+}
+
+#workspaces button {
+  background: transparent;
+  border: none;
+  margin: 0 4px;
+  padding: 0;
+  color: rgba(195, 198, 251, 0.5);
+  font-weight: 500;
+}
+
+#workspaces button.active {
+  color: #C3C6FB;
+  font-weight: 700;
+}
+
+#workspaces button.empty {
+  opacity: 0.4;
+}
+
+/* ─────────────────────────
+   CPU / RAM
+   ───────────────────────── */
+
+#cpu,
+#memory {
+  font-size: 13px;
+  padding: 6px 10px;
+}
+
+#cpu {
+  margin-left: 2px;
+}
+
+#memory {
+  margin-left: 0;
+}
+
+#cpu:hover,
+#memory:hover {
+  background: rgba(195, 198, 251, 0.15);
+}
+
+/* ─────────────────────────
+   CENTRO – RELOJ
+   ───────────────────────── */
+
+#clock {
+  font-size: 14px;
+  font-weight: 700;
+  padding: 6px 18px;
+}
+
+/* ─────────────────────────
+   DERECHA – POWER
+   ───────────────────────── */
+
+#custom-power {
+  font-weight: 700;
+}
+
+#custom-power:hover {
+  background: rgba(195, 198, 251, 0.15);
+}
+
+/* Hover general */
+#network:hover,
+#pulseaudio:hover,
+#backlight:hover,
+#battery:hover {
+  background: rgba(195, 198, 251, 0.15);
+}
+
+/* ─────────────────────────
+   ESTADOS / DINÁMICOS
+   ───────────────────────── */
+
+#network .connected {
+  font-weight: 700;
+}
+
+#network .disconnected,
+#network .disabled {
+  opacity: 0.5;
+}
+
+#backlight .low,
+#pulseaudio .low {
+  font-weight: 500;
+}
+
+#backlight .medium,
+#pulseaudio .medium {
+  font-weight: 600;
+}
+
+#backlight .high,
+#pulseaudio .high {
+  font-weight: 700;
+}
+
+/* ─────────────────────────
+   BATERÍA
+   ───────────────────────── */
+
+#battery .charging,
+#battery .low,
+#battery .medium,
+#battery .high {
+  color: #C3C6FB;
+  font-weight: 700;
+  opacity: 0.9;
+}
+
